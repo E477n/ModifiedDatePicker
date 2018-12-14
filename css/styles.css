@@ -1,0 +1,137 @@
+.center-margin-0{
+    margin: 0 auto !important;
+}
+
+.padding-30{
+    padding: 30px;
+}
+.margin-left-30{
+    margin-left: 30px !important;
+}
+.margin-top--20{
+    margin-top: -20px;
+}
+
+.header{
+    line-height: 1px;
+    padding: 30px !important;
+    margin: 5px !important;
+}
+.test-block{
+    padding: 30px;
+    background-color: rgb(234, 234, 234);
+    border-radius: 15px;
+}
+
+/*widget css*/
+.display-inline{
+    display: inline;
+}
+.month-ul{
+    top: -124px !important;
+    font-size: 1.2em !important;
+    min-width: 6rem !important;
+    text-align: center !important;
+}
+.year-ul{
+    top: -120px !important;
+    font-size: 1.2em !important;
+    min-width: 6rem !important;
+    text-align: center !important;
+}
+.year-ul-2{
+    top: -100px !important;
+    font-size: 1.0em !important;
+    min-width: 6rem !important;
+    text-align: center !important;
+}
+.year-month-button{
+    font-size: 1.0em !important;
+    padding: 1px !important;
+}
+
+.block-style{
+    font-size: 0.7em !important;
+    display: none;
+}
+
+.year-submenu {
+    position: relative;
+}
+
+.year-submenu .year-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -120px;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+
+
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+.mini-zone{
+    padding: 0;
+    width: 30px;
+    height: 15px;
+    font-size: 1px;
+    left: -3000px;
+    bottom: -15px;
+    top: auto;
+}

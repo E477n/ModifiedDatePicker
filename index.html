@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Datepicker</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.runner.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid header">
+            <div class="container">
+                <h1 class="display-4">Datepicker</h1>
+                <p class="lead">This is a modified date picker. You could run the tasks in each tab to see the difference.</p>
+            </div>
+        </div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="1" data-toggle="tab" href="#task1" role="tab" aria-controls="home" aria-selected="true" onclick="appendDatepicker(1)">Task1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="2" data-toggle="tab" href="#task2" role="tab" aria-controls="profile" aria-selected="false" onclick="appendDatepicker(2)">Task2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="3" data-toggle="tab" href="#task3" role="tab" aria-controls="contact" aria-selected="false" onclick="appendDatepicker(3)">Task3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="4" data-toggle="tab" href="#other" role="tab" aria-controls="other" aria-selected="false">Other</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="task1" role="tabpanel" aria-labelledby="task1-tab">
+                <div class="container-fluid padding-30">
+                    <div class="row margin-left-30">
+                        <h5>Task1: Input one date</h5>
+                    </div>
+                    <div class="row margin-left-30">
+                        <p>Use scenario: Register in a cosmetics website which requires to enter a birth date.</p>
+                    </div>
+                    <div class="row padding-30 margin-top--20">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <h5 class="card-header">Bootstrap Datepicker</h5>
+                                <div class="card-body row">
+                                    <div class="col-md-6">
+                                        <div class="btn-group">
+                                            <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                View Task
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <h6 class="dropdown-header">choose one date:</h6>
+                                                <h6 class="dropdown-item disabled">March 22, 1997</h6>
+                                                <div class="dropdown-divider"></div>
+                                                <button class="dropdown-item btn btn-outline-dark" type="button" onclick="startTimer(1)">Start</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="date" id="datepicker-old1" onchange="pauseTimer(1)"/>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <span id="timer1"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <h5 class="card-header">Modified Datepicker</h5>
+                                <div class="card-body row">
+                                    <div class="col-md-6">
+                                        <div class="btn-group">
+                                            <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                View Task
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <h6 class="dropdown-header">choose one date:</h6>
+                                                <h6 class="dropdown-item disabled">March 22, 1997</h6>
+                                                <div class="dropdown-divider"></div>
+                                                <button class="dropdown-item btn btn-outline-dark" type="button" onclick="startTimer(2)">Start</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" id="input-area-1">
+                                        <div class="single-datepicker-area">
+                                            <!--<input type="text" name="date" id="datepicker-new1" onchange="pauseTimer(2)"/>-->
+                                            <input type="text" id="waha" value=""/>
+                                            <div id="newdatepicker" class="block-style">
+                                                <input type="button" name="prev" value="<"  id="prev-month">
+                                                    <!--<span id="month-title"></span>-->
+                                                    <div class="dropdown dropleft display-inline" id="selectMonth">
+                                                        <button id="month" class="btn btn-small btn-outline-dark dropdown-toggle year-month-button" type="button" data-toggle="dropdown">
+                                                            December<span class="caret"> </span>
+                                                        </button>
+                                                        <ul class="dropdown-menu month-ul" id="month-li">
+                                                        </ul>
+                                                    </div>
+                                                <input type="button" name="next" value=">"  id="next-month">
+                                                <input type="button" name="prev-y" value="<"  id="prev-y">
+                                                    <!--<span id="year">2018</span>-->
+                                                    <div id="selectYear" class='dropdown dropleft display-inline'>
+                                                        <button id="year2" class="btn btn-outline-dark btn-small dropdown-toggle year-month-button" type="button" data-toggle="dropdown">
+                                                            2018<span class="caret"></span></button>
+                                                        <ul class='dropdown-menu year-ul' id="year-li">
+                                                        </ul>
+                                                    </div>
+                                                <input type="button" name="next-y" value=">"  id="next-y">
+                                                <table id="dt-able" >
+                                                    <td class="day_val">
+                                                    </td>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <span id="timer2"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-outline-dark center-margin-0" onclick="resetAll()">Reset</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="task2" role="tabpanel" aria-labelledby="task2-tab">
+                <div class="container-fluid padding-30">
+                    <div class="row margin-left-30">
+                        <h5>Task2: Input one remote date</h5>
+                    </div>
+                    <div class="row margin-left-30">
+                        <p>Use scenario: Fill a form for a car insurance online which requires to fill the birth date.</p>
+                    </div>
+                    <div class="row padding-30 margin-top--20">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <h5 class="card-header">Bootstrap Datepicker</h5>
+                                <div class="card-body row">
+                                    <div class="col-md-6">
+                                        <div class="btn-group">
+                                            <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                View Task
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <h6 class="dropdown-header">choose one date:</h6>
+                                                <h6 class="dropdown-item disabled">March 8, 1964</h6>
+                                                <div class="dropdown-divider"></div>
+                                                <button class="dropdown-item btn btn-outline-dark" type="button" onclick="startTimer(3)">Start</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="date" id="datepicker-old2" onchange="pauseTimer(3)"/>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <span id="timer3"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <h5 class="card-header">Modified Datepicker</h5>
+                                <div class="card-body row">
+                                    <div class="col-md-6">
+                                        <div class="btn-group">
+                                            <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                View Task
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <h6 class="dropdown-header">choose one date:</h6>
+                                                <h6 class="dropdown-item disabled">March 8, 1964</h6>
+                                                <div class="dropdown-divider"></div>
+                                                <button class="dropdown-item btn btn-outline-dark" type="button" onclick="startTimer(4)">Start</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" id="input-area-2">
+                                        <!--input-->
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <span id="timer4"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-outline-dark center-margin-0" onclick="resetAll()">Reset</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="task3" role="tabpanel" aria-labelledby="task3-tab">
+                <div class="container-fluid padding-30">
+                    <div class="row margin-left-30">
+                        <h5>Task3: Input one future date</h5>
+                    </div>
+                    <div class="row margin-left-30">
+                        <p>Use scenario: Book a flight from New York to Fairbanks on a travel website.</p>
+                    </div>
+                    <div class="row padding-30 margin-top--20">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <h5 class="card-header">Bootstrap Datepicker</h5>
+                                <div class="card-body row">
+                                    <div class="col-md-6">
+                                        <div class="btn-group">
+                                            <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                View Task
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <h6 class="dropdown-header">choose one date:</h6>
+                                                <h6 class="dropdown-item disabled">January 3, 2019</h6>
+                                                <div class="dropdown-divider"></div>
+                                                <button class="dropdown-item btn btn-outline-dark" type="button" onclick="startTimer(5)">Start</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="date" id="datepicker-old3" onchange="pauseTimer(5)"/>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <span id="timer5"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <h5 class="card-header">Modified Datepicker</h5>
+                                <div class="card-body row">
+                                    <div class="col-md-6">
+                                        <div class="btn-group">
+                                            <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                View Task
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <h6 class="dropdown-header">choose one date:</h6>
+                                                <h6 class="dropdown-item disabled">January 3, 2019</h6>
+                                                <div class="dropdown-divider"></div>
+                                                <button class="dropdown-item btn btn-outline-dark" type="button" onclick="startTimer(6)">Start</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" id="input-area-3">
+                                        <!--input-->
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <span id="timer6"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-outline-dark center-margin-0" onclick="resetAll()">Reset</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
+                <div class="container-fluid padding-30">
+                    <div class="row margin-left-30">
+                        <h5 class="center-margin-0">Unfinished jQuery UI datepicker widget</h5>
+                    </div>
+                    <div class="row margin-left-30">
+                        <p class="center-margin-0">by changing the source code of jquery-ui.js</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 center-margin-0">
+                            <div class="card">
+                                <h5 class="card-header">Unfunctional Datepicker</h5>
+                                <div class="card-body row">
+                                    <div class="col-md-6" id="input-area-4">
+                                        <!--input-->
+                                        <p>Date: <input type="text" id="unfinisheddatepicker"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<script src="js/mywidget.js"></script>-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
